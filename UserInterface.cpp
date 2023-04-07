@@ -19,6 +19,7 @@ int main()
 
     Chess::GamePlay game = Chess::GamePlay();
 
-    std::cout << "Game starts: " << currentPlayer.getCurrentPlayerName();
+    std::cout<<name<<std::endl;
+    std::cout << "Game starts: " << currentPlayer.getCurrentPlayerName() << std::endl;
     return 0;
 }
