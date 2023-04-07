@@ -1,8 +1,7 @@
 all: main
 
-main: ChessBoard.o GamePlay.o PlayerList.o UserInterface.o Player.o
-	g++ -o chess ChessBoard.o GamePlay.o PlayerList.o UserInterface.o Player.o
- 
+main: ChessBoard.o GamePlay.o PlayerList.o UserInterface.o
+	g++ -o chess ChessBoard.o GamePlay.o PlayerList.o UserInterface.o
 ChessBoard.o: ChessBoard.cpp
 	g++ -c ChessBoard.cpp
 
@@ -14,9 +13,6 @@ PlayerList.o: PlayerList.cpp
 
 UserInterface.o: UserInterface.cpp
 	g++ -c UserInterface.cpp
-
-Player.o: Player.cpp
-	g++ -c Player.cpp
 
 clean:
 	rm -f chess *.o *~
