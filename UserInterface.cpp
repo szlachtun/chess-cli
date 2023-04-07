@@ -1,23 +1,24 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include "Player.hpp"
+#include "PlayerList.hpp"
 #include "ChessBoard.hpp"
 #include "GamePlay.hpp"
 
 int main()
 {
+    Chess::PlayerList currentPlayer;
     std::string name;
-    std::cout << "Enter first player name: ";
+    std::cout << "Enter first player name (will play on white side): ";
     std::cin >> name;
-    Chess::Player player1 = Chess::Player(name, "white");
+    currentPlayer.addPlayer(name, "white");
 
-    std::cout << "Enter second player name: ";
+    std::cout << "Enter second player name (will play on black side): ";
     std::cin >> name;
-    Chess::Player player2 = Chess::Player(name, "black");
+    currentPlayer.addPlayer(name, "black");
 
     Chess::GamePlay game = Chess::GamePlay();
 
-    std::cout << "Game starts: " << game.getPlayerTurn();
+    std::cout << "Game starts: " << currentPlayer.getCurrentPlayerName();
     return 0;
 }
